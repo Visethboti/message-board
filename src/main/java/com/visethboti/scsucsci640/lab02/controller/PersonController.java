@@ -14,7 +14,7 @@ import com.visethboti.scsucsci640.lab02.entity.Person;
 import com.visethboti.scsucsci640.lab02.service.PersonService;
 
 @Controller
-@RequestMapping("/persons")
+@RequestMapping(value={"", "/", "/persons"})
 public class PersonController{
 	
 	private PersonService personService;
@@ -24,7 +24,7 @@ public class PersonController{
 		personService = thePersonService;
 	}
 	
-	@GetMapping("/list")
+	@GetMapping(value={"", "/", "/list"})
 	public String listPersons(Model theModel) {
 		// get all persons
 		List<Person> persons = personService.findAll();
